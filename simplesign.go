@@ -1,4 +1,4 @@
-package main
+package simplesign
 
 import (
 	"github.com/gogf/gf/crypto/gaes"
