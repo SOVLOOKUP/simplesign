@@ -49,6 +49,9 @@ func (s *S) Send(to, title string) ([]byte, error) {
 }
 
 func (s *S) Verify(encaptcha []byte, captcha string) (bool, error) {
+    if s.key == nil {
+		s.key = grand.B(32)
+	}
 	decaptcha, err := gaes.Decrypt(encaptcha, s.key)
 
 	if string(decaptcha) == captcha {
