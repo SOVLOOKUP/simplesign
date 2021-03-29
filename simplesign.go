@@ -28,6 +28,7 @@ func NewS(host string, port int, username, password string) (*S, error) {
 	server.Username = username
 	server.Password = password
 	server.Encryption = mail.EncryptionSSL
+	server.KeepAlive = true
 
 	// SMTP client
 	smtpClient, err := server.Connect()
